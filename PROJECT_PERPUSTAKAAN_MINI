@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+typedef enum { TERSEDIA, DIPINJAM, DIKEMBALIKAN, RUSAK } StatusBuku;
+
+typedef struct {
+    char judul[50];
+    StatusBuku status;
+} Buku;
+
+int main() {
+    Buku buku1 = {"Sejarah Biji Pala", DIKEMBALIKAN};
+
+    switch(buku1.status) {
+        case TERSEDIA       : printf("Buku tersedia, silakan pinjam!\n"); break;
+        case DIPINJAM       : printf("Maaf, buku sedang dipinjam.\n"); break;
+        case DIKEMBALIKAN   : printf("Buku sudah dikembalikan.\n"); break;
+        case RUSAK          :    printf("Buku rusak, tidak bisa dipinjam.\n"); break;
+    }
+    return 0;
+}
